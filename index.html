@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-light: #81C784;
+            --primary-dark: #388E3C;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            scroll-behavior: smooth;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--dark-gray);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        /* Section styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Card styles */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            border-radius: 30px;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        /* Home section styles */
+        #home {
+            background-color: var(--white);
+        }
+        
+        .welcome-content {
+            padding: 2rem;
+        }
+        
+        .welcome-title {
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .welcome-text {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* About us section styles */
+        #about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-title {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .about-text {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--white);
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .welcome-content {
+                text-align: center;
+            }
+            
+            .video-container {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo.svg" alt="English Learning Platform Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#lessons">Lessons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#exercises">Exercises</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#capsules">Capsules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#songs">Songs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#games">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 welcome-content">
+                    <h1 class="welcome-title">Welcome to Our English Learning Platform</h1>
+                    <p class="welcome-text">
+                        Discover a whole new way to learn English with our interactive platform. 
+                        Whether you're a beginner or looking to improve your skills, we have resources 
+                        designed to make your learning journey enjoyable and effective.
+                    </p>
+                    <a href="#lessons" class="btn btn-primary">Explore Lessons</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4Omx9MP2uoQ?si=4_6ufR_2zzXRVhjZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section id="lessons">
+        <div class="container">
+            <h2 class="section-title">Lessons</h2>
+            <div class="row">
+                <!-- Lesson 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Greetings</h5>
+                            <p class="card-text">Learn common English greetings and how to introduce yourself. Perfect for beginners who want to start conversations confidently.</p>
+                            <a href="https://www.youtube.com/watch?v=AzES-nhQFzk&list=PL0A0C8CFFE9712B76&index=1&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do and Don't</h5>
+                            <p class="card-text">Master the usage of "do" and "don't" in English sentences. Learn how to form questions and negative statements correctly.</p>
+                            <a href="https://www.youtube.com/watch?v=uC4Zlz5pV70&list=PL0A0C8CFFE9712B76&index=11&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To Be in the Present</h5>
+                            <p class="card-text">Understand how to use the verb "to be" in present tense. Learn about am, is, and are and when to use each form.</p>
+                            <a href="https://www.youtube.com/watch?v=QXbxESM5wQI&list=PL0A0C8CFFE9712B76&index=17&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather</h5>
+                            <p class="card-text">Learn vocabulary related to weather conditions and how to talk about the forecast. Perfect for everyday conversations.</p>
+                            <a href="https://www.youtube.com/watch?v=EmHnm0U6e18&list=PL0A0C8CFFE9712B76&index=22&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Articles (a-an-the)</h5>
+                            <p class="card-text">Understand when and how to use articles in English. Learn the differences between "a," "an," and "the" with practical examples.</p>
+                            <a href="https://www.youtube.com/watch?v=MK300_aeKaA&list=PL0A0C8CFFE9712B76&index=25&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">That Those</h5>
+                            <p class="card-text">Learn how to use demonstrative pronouns "that" and "those" correctly. Understanding distance and plurality in English.</p>
+                            <a href="https://www.youtube.com/watch?v=2RjpUy2rUkw&list=PL0A0C8CFFE9712B76&index=27&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">I Have</h5>
+                            <p class="card-text">Master the verb "to have" in English and learn how to express possession. Essential for describing what you own or possess.</p>
+                            <a href="https://www.youtube.com/watch?v=HLFo2PRB2_I&list=PL0A0C8CFFE9712B76&index=32&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Possessive Nouns</h5>
+                            <p class="card-text">Learn how to show ownership in English using possessive forms. Understand apostrophes and possessive pronouns.</p>
+                            <a href="https://www.youtube.com/watch?v=CWOcw97CP_M&list=PL0A0C8CFFE9712B76&index=47&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Yes/No Questions</h5>
+                            <p class="card-text">Learn how to form and answer yes/no questions in English. Essential for basic conversations and getting information.</p>
+                            <a href="https://www.youtube.com/watch?v=CWOcw97CP_M&list=PL0A0C8CFFE9712B76&index=47&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tell the Time</h5>
+                            <p class="card-text">Master how to tell the time in English. Learn about hours, minutes, and expressions like "quarter past" and "half past."</p>
+                            <a href="https://www.youtube.com/watch?v=HKpwjiv4J2Q&list=PL0A0C8CFFE9712B76&index=58&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Routines</h5>
+                            <p class="card-text">Learn vocabulary and phrases to describe your daily activities. Perfect for practicing present simple tense.</p>
+                            <a href="https://www.youtube.com/watch?v=1fkJippQR4U&list=PL0A0C8CFFE9712B76&index=59&pp=iAQB" class="btn btn-primary" target="_blank">View Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra Card for Future Lessons -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Lessons Coming Soon!</h5>
+                            <p class="card-text">We're constantly adding new content to help you improve your English skills. Check back soon for new lessons!</p>
+                            <button class="btn btn-primary" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises Section -->
+    <section id="exercises">
+        <div class="container">
+            <h2 class="section-title">Exercises</h2>
+            <div class="row">
+                <!-- Exercise 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Greetings Practice</h5>
+                            <p class="card-text">Practice different greeting expressions through worksheets and interactive exercises. Perfect for reinforcing your learning.</p>
+                            <a href="https://en.islcollective.com/english-esl-worksheets/general-topic/greetings" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do and Don't Practice</h5>
+                            <p class="card-text">Complete exercises about using "do" and "does" in statements and questions. Test your understanding with these interactive activities.</p>
+                            <a href="https://agendaweb.org/verbs/do-does-exercises.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To Be in the Present Practice</h5>
+                            <p class="card-text">Test your knowledge of the verb "to be" with these comprehensive worksheets and resources. Focus on am, is, and are.</p>
+                            <a href="https://agendaweb.org/verbs/to-be-worksheets-resources-lessons.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Practice</h5>
+                            <p class="card-text">Practice weather vocabulary and expressions with these interactive worksheets. Learn to describe different climate conditions.</p>
+                            <a href="https://agendaweb.org/vocabulary/weather-worksheets-resources.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Articles Practice</h5>
+                            <p class="card-text">Test your understanding of articles (a, an, the) with these online exercises. Learn when to use each article correctly.</p>
+                            <a href="https://www.englishcurrent.com/exercises/study-articles-exercises-online/" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">That Those Practice</h5>
+                            <p class="card-text">Practice using demonstrative pronouns with these grammar exercises. Learn to distinguish between "that," "those," "this," and "these."</p>
+                            <a href="https://agendaweb.org/grammar/demonstratives-exercises.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">I Have Practice</h5>
+                            <p class="card-text">Practice using "have" and "has" with these targeted exercises. Improve your ability to express possession correctly.</p>
+                            <a href="https://agendaweb.org/verbs/to-have-exercises.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Possessive Nouns Practice</h5>
+                            <p class="card-text">Test your knowledge of possessive forms with these elementary-level activities. Perfect for understanding ownership in English.</p>
+                            <a href="https://elaskillbuilder.com/possessive-nouns-activities-for-elementary/" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Yes/No Questions Practice</h5>
+                            <p class="card-text">Practice forming and answering yes/no questions with these specialized exercises. Essential for basic conversation skills.</p>
+                            <a href="https://www.englishcurrent.com/grammar/yes-no-questions-lesson-exercises/" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tell the Time Practice</h5>
+                            <p class="card-text">Practice telling the time in English with these interactive exercises. Focus on hours, minutes, and time expressions.</p>
+                            <a href="https://agendaweb.org/vocabulary/time-exercises.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercise 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Routines Practice</h5>
+                            <p class="card-text">Practice vocabulary related to daily activities with these targeted exercises. Perfect for present simple tense practice.</p>
+                            <a href="https://agendaweb.org/vocabulary/daily-routines-exercises.html" class="btn btn-primary" target="_blank">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra Card for Future Exercises -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Exercises Coming Soon!</h5>
+                            <p class="card-text">We're developing new practice materials to help you reinforce your learning. Check back for updates!</p>
+                            <button class="btn btn-primary" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capsules Section -->
+    <section id="capsules">
+        <div class="container">
+            <h2 class="section-title">Capsules</h2>
+            <div class="row">
+                <!-- Capsule 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Greetings Capsule</h5>
+                            <p class="card-text">Quick teaching tips on how to introduce English greetings to students. Learn effective methods for teaching common expressions.</p>
+                            <a href="https://www.usingenglish.com/teachers/articles/how-to-teach-english-greetings.html" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do and Don't Capsule</h5>
+                            <p class="card-text">Tips and best practices for successful English teaching. Learn the dos and don'ts of effective language instruction.</p>
+                            <a href="https://www.ihteachenglish.com/blog-post/8-dos-and-donts-successful-teaching" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To Be in the Present Capsule</h5>
+                            <p class="card-text">Teacher tips on being present and mindful when working with children. Enhance your teaching presence for better results.</p>
+                            <a href="https://info.teachstone.com/blog/teacher-tips-being-in-the-moment-with-children" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Capsule</h5>
+                            <p class="card-text">Resources and information about weather for teaching purposes. Use these materials to enhance weather vocabulary lessons.</p>
+                            <a href="https://www.weatherpack.com/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Articles Capsule</h5>
+                            <p class="card-text">Learn how to teach articles effectively with these teacher resources. Tips on explaining "a," "an," and "the" to English learners.</p>
+                            <a href="https://www.usingenglish.com/teachers/articles/how-to-teach-an.html" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">That Those Capsule</h5>
+                            <p class="card-text">Resources for teaching vocabulary including demonstratives. Enhance your students' understanding of "that" and "those."</p>
+                            <a href="https://vocabularyluau.com/book/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">I Have Capsule</h5>
+                            <p class="card-text">Access capsule teaching methods for effective language instruction. Improve your teaching of possession and the verb "have."</p>
+                            <a href="https://capsuleteaching.com/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Possessive Nouns Capsule</h5>
+                            <p class="card-text">Tips for teaching possessive nouns effectively. Learn strategies to help students understand ownership in English.</p>
+                            <a href="https://enjoy-teaching.com/teaching-possessive-nouns/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Yes/No Questions Capsule</h5>
+                            <p class="card-text">Resources for teaching children how to answer yes/no questions. Essential for developing basic communication skills.</p>
+                            <a href="https://www.speechandlanguagekids.com/answering-yes-no-questions/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tell the Time Capsule</h5>
+                            <p class="card-text">Hands-on approaches to teaching time-telling to students. Creative methods for making time concepts more accessible.</p>
+                            <a href="https://www.weareteachers.com/5-hands-on-ways-to-teach-telling-time/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Capsule 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Routines Capsule</h5>
+                            <p class="card-text">Lesson plans and teaching ideas for daily routines vocabulary. Help students describe their everyday activities.</p>
+                            <a href="https://games4esl.com/lesson-plans/daily-routine/" class="btn btn-primary" target="_blank">View Capsule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra Card for Future Capsules -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Capsules Coming Soon!</h5>
+                            <p class="card-text">We're developing additional teaching resources to support your educational journey. Stay tuned for updates!</p>
+                            <button class="btn btn-primary" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Songs Section -->
+    <section id="songs">
+        <div class="container">
+            <h2 class="section-title">Songs</h2>
+            <div class="row">
+                <!-- Song 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Greetings Song</h5>
+                            <p class="card-text">Learn greetings and introductions through this catchy song. Perfect for memorizing common expressions through music.</p>
+                            <a href="https://www.youtube.com/watch?v=gVIFEVLzP4o" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do and Don't Song</h5>
+                            <p class="card-text">A musical way to learn about do's and don'ts in English. Memorize these structures through rhythm and melody.</p>
+                            <a href="https://www.youtube.com/watch?v=WJwrEn6BY3w" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To Be in the Present Song</h5>
+                            <p class="card-text">Learn the verb "to be" in present tense through this educational song. A fun way to memorize am, is, and are.</p>
+                            <a href="https://music.youtube.com/watch?v=VNE6wAm9gUg" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Song</h5>
+                            <p class="card-text">A catchy tune to help you remember weather vocabulary and expressions. Learn through music and rhythm.</p>
+                            <a href="https://www.youtube.com/watch?v=qUXB2q-Zfvs" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Articles Song</h5>
+                            <p class="card-text">Learn when to use "a," "an," and "the" with this educational song. Make grammar rules easier to remember through music.</p>
+                            <a href="https://www.youtube.com/watch?v=B8MbH5Wwf5I" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">That Those Song</h5>
+                            <p class="card-text">A musical approach to learning demonstrative pronouns. Remember "this," "that," "these," and "those" through song.</p>
+                            <a href="https://www.youtube.com/watch?v=6MX2-acP1uc" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">I Have Song</h5>
+                            <p class="card-text">Learn about possession and the verb "have" through this educational song. A fun way to practice "have" and "has."</p>
+                            <a href="https://www.youtube.com/watch?v=pWepfJ-8XU0" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Possessive Nouns Song</h5>
+                            <p class="card-text">Learn about ownership and possessive forms through music. Makes grammar more accessible and memorable.</p>
+                            <a href="https://www.youtube.com/watch?v=F2lsRCFLHsA" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Yes/No Questions Song</h5>
+                            <p class="card-text">A melodic way to learn how to form and answer yes/no questions in English. Practice through rhythm and repetition.</p>
+                            <a href="https://www.youtube.com/watch?v=6bsjwcqWxbQ" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tell the Time Song</h5>
+                            <p class="card-text">Learn to tell time in English through this educational song. Makes hours, minutes, and time expressions memorable.</p>
+                            <a href="https://www.youtube.com/watch?v=hqnc_PcvoB0" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Song 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Routines Song</h5>
+                            <p class="card-text">A catchy song to help you learn vocabulary for everyday activities. Perfect for practicing present simple tense.</p>
+                            <a href="https://www.youtube.com/watch?v=eUXkj6j6Ezw" class="btn btn-primary" target="_blank">Listen to Song</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra Card for Future Songs -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Songs Coming Soon!</h5>
+                            <p class="card-text">We're adding new educational songs to make learning English even more enjoyable. Check back for updates!</p>
+                            <button class="btn btn-primary" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games">
+        <div class="container">
+            <h2 class="section-title">Games</h2>
+            <div class="row">
+                <!-- Game 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Greetings Games</h5>
+                            <p class="card-text">Fun games to practice greetings and introductions. Interactive activities to make learning social expressions enjoyable.</p>
+                            <a href="https://games4esl.com/greetings-and-introductions-esl-games/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do and Don't Games</h5>
+                            <p class="card-text">Interactive games to practice using "do," "does," "don't," and "doesn't" correctly. Test your knowledge through play.</p>
+                            <a href="https://wordwall.net/en-us/community/do-does-dont-doesnt" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To Be in the Present Games</h5>
+                            <p class="card-text">Interactive activities to practice the verb "to be" in present tense. Reinforce your understanding of am, is, and are.</p>
+                            <a href="https://agendaweb.org/verbs/to-be-worksheets-resources-lessons.html" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Games</h5>
+                            <p class="card-text">Fun games to practice weather vocabulary and expressions. Learn about different weather conditions through play.</p>
+                            <a href="https://bing.com/search?q=How%e2%80%99s+The+Weather+Game" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Articles Games</h5>
+                            <p class="card-text">Interactive games to practice using "a," "an," and "the" correctly. Perfect for mastering English articles through play.</p>
+                            <a href="https://bing.com/search?q=Teaching+Articles%3a+A%2c+An%2c+and+The" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">That Those Games</h5>
+                            <p class="card-text">Games to practice demonstrative pronouns in English. Learn when to use "this," "that," "these," and "those" through play.</p>
+                            <a href="https://bing.com/search?q=How+to+Teach+Yes%2fNo+Questions" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">I Have Games</h5>
+                            <p class="card-text">Activities to practice the verb "have" and expressions of possession. Learn through interactive games and challenges.</p>
+                            <a href="https://www.speechandlanguagekids.com/answering-yes-no-questions/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Possessive Nouns Games</h5>
+                            <p class="card-text">Fun activities to practice possessive forms in English. Learn about ownership and apostrophes through interactive play.</p>
+                            <a href="https://elaskillbuilder.com/possessive-nouns-activities-for-elementary/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Yes/No Questions Games</h5>
+                            <p class="card-text">Interactive games to practice forming and answering yes/no questions. Develop essential conversation skills through play.</p>
+                            <a href="https://www.englishcurrent.com/grammar/yes-no-questions-lesson-exercises/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tell the Time Games</h5>
+                            <p class="card-text">Hands-on games to practice telling the time in English. Learn about hours, minutes, and time expressions through play.</p>
+                            <a href="https://www.weareteachers.com/5-hands-on-ways-to-teach-telling-time/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Routines Games</h5>
+                            <p class="card-text">Fun games to practice vocabulary related to everyday activities. Perfect for learning daily routine expressions.</p>
+                            <a href="https://www.eslactivity.org/daily-routines-esl/" class="btn btn-primary" target="_blank">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra Card for Future Games -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">More Games Coming Soon!</h5>
+                            <p class="card-text">We're developing new interactive games to make English learning even more enjoyable. Check back for updates!</p>
+                            <button class="btn btn-primary" disabled>Coming Soon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <h3 class="about-title">Who I Am</h3>
+                <p class="about-text">
+                    I'm an English teacher passionate about making language learning accessible, 
+                    engaging, and effective for all students. With years of experience in education, 
+                    I've developed methods that help learners of all levels improve their English skills.
+                </p>
+                
+                <h3 class="about-title">Why I Created This Platform</h3>
+                <p class="about-text">
+                    This platform was created as an extra resource for my students to open their eyes 
+                    to new technologies and make them receptive to new learning approaches. I believe 
+                    that technology can enhance the learning experience and make English more accessible 
+                    to everyone.
+                </p>
+                
+                <h3 class="about-title">Who This Platform Is For</h3>
+                <p class="about-text">
+                    This platform is designed for students and anyone interested in learning English. 
+                    Whether you're a beginner just starting your language journey or looking to improve 
+                    specific skills, you'll find resources here to help you progress.
+                </p>
+                
+                <h3 class="about-title">Contact Me</h3>
+                <p class="about-text">
+                    Have questions or suggestions? Feel free to reach out through any of the channels below:
+                </p>
+                
+                <div class="social-links">
+                    <a href="mailto:teacher@englishlearning.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://facebook.com/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com/" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 English Learning Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active link in navbar
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Update active link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

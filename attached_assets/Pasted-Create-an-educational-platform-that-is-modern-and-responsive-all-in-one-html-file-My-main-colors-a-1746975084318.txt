@@ -1,0 +1,96 @@
+Create an educational platform that is modern and responsive, all in one html file. My main colors are green and white, and this is what it should look like: 
+Header: 
+	I want a logo(educational)
+	And links to these sections inside the page:  lessons, exercises, songs, capsules, games. About us.
+section 1 home: 
+Welcoming title and a short paragraph next to it a video embedded from Youtube to explain how to use the platform. Video Link:  <iframe width="560" height="315" src="https://www.youtube.com/embed/4Omx9MP2uoQ?si=4_6ufR_2zzXRVhjZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Section 2 lessons:
+	centered title “lessons”
+	cards that contain these things: title of the lesson, description, and a button to the lesson. These are the lessons with their links. 
+Lesson	Link
+Greetings	https://www.youtube.com/watch?v=AzES-nhQFzk&list=PL0A0C8CFFE9712B76&index=1&pp=iAQB
+Do and Don't	https://www.youtube.com/watch?v=uC4Zlz5pV70&list=PL0A0C8CFFE9712B76&index=11&pp=iAQB
+To Be in the Present	https://www.youtube.com/watch?v=QXbxESM5wQI&list=PL0A0C8CFFE9712B76&index=17&pp=iAQB
+Weather	https://www.youtube.com/watch?v=EmHnm0U6e18&list=PL0A0C8CFFE9712B76&index=22&pp=iAQB
+Articles (a-an-the)	https://www.youtube.com/watch?v=MK300_aeKaA&list=PL0A0C8CFFE9712B76&index=25&pp=iAQB
+That Those	https://www.youtube.com/watch?v=2RjpUy2rUkw&list=PL0A0C8CFFE9712B76&index=27&pp=iAQB
+I Have	https://www.youtube.com/watch?v=HLFo2PRB2_I&list=PL0A0C8CFFE9712B76&index=32&pp=iAQB
+Possessive Nouns	https://www.youtube.com/watch?v=CWOcw97CP_M&list=PL0A0C8CFFE9712B76&index=47&pp=iAQB
+Yes/No Questions	https://www.youtube.com/watch?v=CWOcw97CP_M&list=PL0A0C8CFFE9712B76&index=47&pp=iAQB
+Tell the Time	https://www.youtube.com/watch?v=HKpwjiv4J2Q&list=PL0A0C8CFFE9712B76&index=58&pp=iAQB
+Daily Routines	https://www.youtube.com/watch?v=1fkJippQR4U&list=PL0A0C8CFFE9712B76&index=59&pp=iAQB
+
+Section 3 exercises: 
+	centered title “Exercises”
+	for each lesson that you created I want you now to create cards title and description and a button to the exercise
+Lesson	Exercise Link
+Greetings	https://en.islcollective.com/english-esl-worksheets/general-topic/greetings
+Do and Don't	https://agendaweb.org/verbs/do-does-exercises.html
+To Be in the Present	https://agendaweb.org/verbs/to-be-worksheets-resources-lessons.html
+Weather	https://agendaweb.org/vocabulary/weather-worksheets-resources.html
+Articles (a-an-the)	https://www.englishcurrent.com/exercises/study-articles-exercises-online/
+That Those	https://agendaweb.org/grammar/demonstratives-exercises.html
+I Have	https://agendaweb.org/verbs/to-have-exercises.html
+Possessive Nouns	https://elaskillbuilder.com/possessive-nouns-activities-for-elementary/
+Yes/No Questions	https://www.englishcurrent.com/grammar/yes-no-questions-lesson-exercises/
+Tell the Time	https://agendaweb.org/vocabulary/time-exercises.html
+Daily Routines	https://agendaweb.org/vocabulary/daily-routines-exercises.html
+
+Section 4 capsules:
+	centered title “capsules”
+	now for each lesson provide a card with the title again and description, and a button for the capsule video.
+Lesson	Capsule Link
+Greetings	https://www.usingenglish.com/teachers/articles/how-to-teach-english-greetings.html
+Do and Don't	https://www.ihteachenglish.com/blog-post/8-dos-and-donts-successful-teaching
+To Be in the Present	https://info.teachstone.com/blog/teacher-tips-being-in-the-moment-with-children
+Weather	https://www.weatherpack.com/
+Articles (a-an-the)	https://www.usingenglish.com/teachers/articles/how-to-teach-an.html
+That Those	https://vocabularyluau.com/book/
+I Have	https://capsuleteaching.com/
+Possessive Nouns	https://enjoy-teaching.com/teaching-possessive-nouns/
+Yes/No Questions	https://www.speechandlanguagekids.com/answering-yes-no-questions/
+Tell the Time	https://www.weareteachers.com/5-hands-on-ways-to-teach-telling-time/
+Daily Routines	https://games4esl.com/lesson-plans/daily-routine/
+
+section 5 songs: 
+	centered title “songs”
+	now for each lesson provide a card with “ title” and “description”, and a button for the song.
+Lesson	Song Link
+Greetings	https://www.youtube.com/watch?v=gVIFEVLzP4o
+Do and Don't	https://www.youtube.com/watch?v=WJwrEn6BY3w
+To Be in the Present	https://music.youtube.com/watch?v=VNE6wAm9gUg
+Weather	https://www.youtube.com/watch?v=qUXB2q-Zfvs
+Articles (a-an-the)	https://www.youtube.com/watch?v=B8MbH5Wwf5I
+That Those	https://www.youtube.com/watch?v=6MX2-acP1uc
+I Have	https://www.youtube.com/watch?v=pWepfJ-8XU0
+Possessive Nouns	https://www.youtube.com/watch?v=F2lsRCFLHsA
+Yes/No Questions	https://www.youtube.com/watch?v=6bsjwcqWxbQ
+Tell the Time	https://www.youtube.com/watch?v=hqnc_PcvoB0
+Daily Routines	https://www.youtube.com/watch?v=eUXkj6j6Ezw
+
+section 6 games: 
+	centered title “games”
+	now for each lesson provide a card with the title again and description, and a button for the game.
+Lesson	Game Link
+Greetings	https://games4esl.com/greetings-and-introductions-esl-games/
+Do and Don't	https://wordwall.net/en-us/community/do-does-dont-doesnt
+To Be in the Present	https://agendaweb.org/verbs/to-be-worksheets-resources-lessons.html
+Weather	https://bing.com/search?q=How%e2%80%99s+The+Weather+Game
+Articles (a-an-the)	https://bing.com/search?q=Teaching+Articles%3a+A%2c+An%2c+and+The
+That Those	https://bing.com/search?q=How+to+Teach+Yes%2fNo+Questions
+I Have	https://www.speechandlanguagekids.com/answering-yes-no-questions/
+Possessive Nouns	https://elaskillbuilder.com/possessive-nouns-activities-for-elementary/
+Yes/No Questions	https://www.englishcurrent.com/grammar/yes-no-questions-lesson-exercises/
+Tell the Time	https://www.weareteachers.com/5-hands-on-ways-to-teach-telling-time/
+Daily Routines	https://www.eslactivity.org/daily-routines-esl/
+
+
+
+Section 7 about us;
+	who I am: an English teacher.
+	why I created this platform:  an extra resource for my students- open their eyes to new technologies, make them open for new things.
+	for whom: students and anyone that is interested in learning English
+	contact me: links and icons to email, facebook, Instagram, …
+notes: 
+generate all the descriptions based on the titles. They'll be clear and beginner-friendly.
+use comments and provide me with an extra card in each section in case I want to add new cards. 
